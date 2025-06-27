@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blueprint of the Poultry Industry: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F4F4;
+            color: #333333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .kpi-value {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #04A5C4;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0A2B4C;
+            margin-top: 0.5rem;
+        }
+        .flowchart-node {
+            background-color: #FFFFFF;
+            border: 2px solid #04A5C4;
+            color: #0A2B4C;
+        }
+        .flowchart-arrow {
+            color: #F5A42E;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#0A2B4C] text-white p-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-2">The Blueprint of the Poultry Industry</h1>
+        <p class="text-lg md:text-xl text-[#F4F4F4] max-w-3xl mx-auto">A deep dive into the life cycles, genetics, and operational standards that define modern poultry farming.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="lifecycle" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0A2B4C] mb-2">The Journey of a Chicken</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8">From a 21-day marvel of embryonic development to specialized paths for meat or egg production, every stage of a chicken's life is meticulously managed.</p>
+
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-2xl font-bold text-[#0A2B4C] mb-4 text-center">21 Days of Development: From Yolk to Chick</h3>
+                <p class="text-center max-w-2xl mx-auto mb-6">Inside the egg, a precisely orchestrated sequence of events unfolds. Understanding these milestones is critical for successful incubation.</p>
+                <div class="relative wrap overflow-hidden p-2 h-full">
+                    <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
+                    <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#F5A42E] shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-sm text-white">1-3</h1>
+                        </div>
+                        <div class="order-1 bg-blue-100 rounded-lg shadow-md w-5/12 px-6 py-4">
+                            <h3 class="mb-2 font-bold text-[#0A2B4C] text-lg">Days 1-3: Foundation</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-900">The primitive streak, heart, and blood vessels form. The heart begins beating around 44 hours.</p>
+                        </div>
+                    </div>
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#F5A42E] shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto text-white font-semibold text-sm">4-7</h1>
+                        </div>
+                        <div class="order-1 bg-orange-100 rounded-lg shadow-md w-5/12 px-6 py-4">
+                             <h3 class="mb-2 font-bold text-[#0A2B4C] text-lg">Days 4-7: Structuring</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-900">Organs, beak, legs, and wings become distinct. By day 7, the embryo starts to look more bird-like.</p>
+                        </div>
+                    </div>
+                     <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#F5A42E] shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-sm text-white">14</h1>
+                        </div>
+                        <div class="order-1 bg-blue-100 rounded-lg shadow-md w-5/12 px-6 py-4">
+                            <h3 class="mb-2 font-bold text-[#0A2B4C] text-lg">Day 14: Positioning</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-900">Claws are forming and the embryo begins to orient itself for the hatching process.</p>
+                        </div>
+                    </div>
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#F5A42E] shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto text-white font-semibold text-sm">21</h1>
+                        </div>
+                        <div class="order-1 bg-orange-100 rounded-lg shadow-md w-5/12 px-6 py-4">
+                             <h3 class="mb-2 font-bold text-[#0A2B4C] text-lg">Day 21: Hatching</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-900">The chick pierces the air cell, begins pulmonary respiration, and uses its egg tooth to break free.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-[#0A2B4C] mb-4 text-center">Fueling Growth: Nutrition by Life Stage</h3>
+                <p class="text-center max-w-3xl mx-auto mb-8">A chicken's dietary needs change dramatically as it matures. Commercial feeds are precisely formulated with varying protein and calcium levels to optimize health and productivity at each stage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <h4 class="text-xl font-semibold text-[#0A2B4C] mb-2">Starter Feed (0-8 Weeks)</h4>
+                        <p class="text-sm mb-4">High protein for rapid growth and skeletal development.</p>
+                        <div class="chart-container"><canvas id="starterFeedChart"></canvas></div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-xl font-semibold text-[#0A2B4C] mb-2">Grower Feed (9-17 Weeks)</h4>
+                        <p class="text-sm mb-4">Reduced protein and low calcium to support steady maturation.</p>
+                        <div class="chart-container"><canvas id="growerFeedChart"></canvas></div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-xl font-semibold text-[#0A2B4C] mb-2">Layer Feed (18+ Weeks)</h4>
+                        <p class="text-sm mb-4">High calcium is critical for strong eggshell formation.</p>
+                        <div class="chart-container"><canvas id="layerFeedChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="breeding" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0A2B4C] mb-2">The Blueprint of Production</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8">The commercial poultry industry is built on a sophisticated breeding pyramid that efficiently multiplies superior genetic traits from a few elite birds to millions of production animals.</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex flex-col items-center">
+                    <div class="flowchart-node p-4 rounded-lg shadow-lg text-center mb-4 w-full md:w-1/3">
+                        <h3 class="font-bold text-lg">Pure Line / Pedigree Stock</h3>
+                        <p class="text-sm">Genetic source. Rigorous selection for ideal traits.</p>
+                    </div>
+                    <div class="flowchart-arrow text-4xl font-bold mb-4">↓</div>
+                    <div class="flowchart-node p-4 rounded-lg shadow-lg text-center mb-4 w-full md:w-1/2">
+                        <h3 class="font-bold text-lg">Great-Grandparent Stock (GGP)</h3>
+                        <p class="text-sm">First generation of commercial multiplication.</p>
+                    </div>
+                    <div class="flowchart-arrow text-4xl font-bold mb-4">↓</div>
+                    <div class="flowchart-node p-4 rounded-lg shadow-lg text-center mb-4 w-full md:w-2/3">
+                        <h3 class="font-bold text-lg">Grandparent Stock (GPS)</h3>
+                        <p class="text-sm">Male and female lines bred for distinct traits (e.g., fertility, egg-laying).</p>
+                    </div>
+                     <div class="flowchart-arrow text-4xl font-bold mb-4">↓</div>
+                     <div class="flowchart-node p-4 rounded-lg shadow-lg text-center mb-4 w-full md:w-5/6">
+                        <h3 class="font-bold text-lg">Parent Stock (PS)</h3>
+                        <p class="text-sm">Produces the fertilized eggs for the final commercial birds.</p>
+                    </div>
+                    <div class="flowchart-arrow text-4xl font-bold mb-4">↓</div>
+                    <div class="bg-[#0A2B4C] text-white p-4 rounded-lg shadow-lg text-center w-full">
+                        <h3 class="font-bold text-lg">Commercial Broilers or Layers</h3>
+                        <p class="text-sm">The final product, with one pedigree bird resulting in over 3 million commercial chickens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="production" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0A2B4C] mb-2">Two Paths: Layers vs. Broilers</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8">While originating from the same breeding principles, commercial chickens are raised for two distinct purposes with vastly different life cycles and management goals.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-[#04A5C4] mb-4 text-center">Layer Hens: Egg Production</h3>
+                    <p class="mb-6 text-center">Bred for sustained egg-laying, their production cycle lasts over a year. The focus is on longevity and consistent output.</p>
+                     <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div><span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200">Start Laying</span></div>
+                            <div class="text-right"><span class="text-xs font-semibold inline-block text-blue-600">18 Weeks</span></div>
+                        </div>
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded bg-blue-200">
+                            <div style="width:20%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#04A5C4]"></div>
+                        </div>
+                    </div>
+                    <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div><span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-orange-600 bg-orange-200">Peak Production</span></div>
+                            <div class="text-right"><span class="text-xs font-semibold inline-block text-orange-600">~72 Weeks</span></div>
+                        </div>
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded bg-orange-200">
+                            <div style="width:80%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#F5A42E]"></div>
+                        </div>
+                    </div>
+                     <p class="text-sm mt-4 text-center">A typical cycle lasts 52-56 weeks, after which production declines and flocks are replaced.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-[#F5A42E] mb-4 text-center">Broiler Chickens: Meat Production</h3>
+                    <p class="mb-6 text-center">Genetically selected for rapid growth, broilers reach market weight in a fraction of the time. The focus is on feed conversion and muscle gain.</p>
+                     <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div><span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">Full Growth Cycle</span></div>
+                            <div class="text-right"><span class="text-xs font-semibold inline-block text-green-600">5-7 Weeks</span></div>
+                        </div>
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded bg-green-200">
+                            <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"></div>
+                        </div>
+                    </div>
+                     <p class="text-sm mt-4 text-center">Broilers reach a market weight of 1.8-3.5 kg in just a few weeks, a testament to genetic selection and optimized nutrition.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="housing" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0A2B4C] mb-2">Engineered Environments</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8">Poultry housing is a science. From space allocation to climate control, every detail is engineered to maximize health, welfare, and productivity.</p>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                 <h3 class="text-2xl font-bold text-[#0A2B4C] mb-4 text-center">Space Per Bird: A Critical Metric</h3>
+                 <p class="text-center max-w-3xl mx-auto mb-8">The amount of space directly impacts bird welfare and performance. Standards vary significantly based on the production system, with free-range and cage-free systems providing more room to encourage natural behaviors.</p>
+                 <div class="chart-container h-[400px] max-h-[450px]"><canvas id="housingSpaceChart"></canvas></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="kpi-card">
+                    <div class="kpi-value">~70°F</div>
+                    <div class="kpi-label">Optimal Temperature</div>
+                    <p class="text-xs mt-2">The thermoneutral zone (65-75°F) where adult birds are most comfortable and productive.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">1.5-2.0</div>
+                    <div class="kpi-label">Summer Ventilation (CFM/lb)</div>
+                    <p class="text-xs mt-2">Crucial for removing heat and preventing heat stress during warm months.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">16-17</div>
+                    <div class="kpi-label">Light Hours for Layers</div>
+                    <p class="text-xs mt-2">Long daylight hours are essential to stimulate and maintain consistent egg production.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&lt;25 ppm</div>
+                    <div class="kpi-label">Max Ammonia Level</div>
+                    <p class="text-xs mt-2">Good ventilation and dry litter are key to keeping this toxic gas at safe levels.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#0A2B4C] text-white p-6 text-center">
+        <p>This infographic presents a summary of technical and operational data from poultry science research.</p>
+        <p class="text-xs mt-2 opacity-70">Data synthesized from comprehensive industry reports. All visualizations are for illustrative purposes.</p>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const chartTooltipConfig = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    function wrapLabels(label) {
+        const maxLen = 16;
+        if (label.length <= maxLen) {
+            return label;
+        }
+        const words = label.split(' ');
+        let currentLine = '';
+        const lines = [];
+        for (const word of words) {
+            if ((currentLine + ' ' + word).length > maxLen) {
+                lines.push(currentLine.trim());
+                currentLine = word;
+            } else {
+                currentLine += ' ' + word;
+            }
+        }
+        lines.push(currentLine.trim());
+        return lines.map(l => l.trim()).filter(l => l.length > 0);
+    }
+
+    const brandColors = {
+        deepBlue: '#0A2B4C',
+        brightBlue: '#04A5C4',
+        orange: '#F5A42E',
+        lightGray: '#F4F4F4',
+        darkGray: '#333333'
+    };
+    
+    new Chart(document.getElementById('starterFeedChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Protein (21%)', 'Other Nutrients'],
+            datasets: [{
+                label: 'Starter Feed Composition',
+                data: [21, 79],
+                backgroundColor: [brandColors.brightBlue, brandColors.lightGray],
+                borderColor: [brandColors.brightBlue, brandColors.lightGray],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: chartTooltipConfig.plugins
+        }
+    });
+
+    new Chart(document.getElementById('growerFeedChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Protein (17%)', 'Other Nutrients'],
+            datasets: [{
+                label: 'Grower Feed Composition',
+                data: [17, 83],
+                backgroundColor: [brandColors.orange, brandColors.lightGray],
+                borderColor: [brandColors.orange, brandColors.lightGray],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: chartTooltipConfig.plugins
+        }
+    });
+
+    new Chart(document.getElementById('layerFeedChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Protein (17%)', 'Calcium (3.5%)', 'Other Nutrients'],
+            datasets: [{
+                label: 'Layer Feed Composition',
+                data: [17, 3.5, 79.5],
+                backgroundColor: [brandColors.brightBlue, brandColors.orange, brandColors.lightGray],
+                borderColor: [brandColors.brightBlue, brandColors.orange, brandColors.lightGray],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: chartTooltipConfig.plugins
+        }
+    });
+    
+    const rawLabels = ['Conventional Cage', 'Cage-Free', 'Free-Range'];
+    const processedLabels = rawLabels.map(wrapLabels);
+
+    new Chart(document.getElementById('housingSpaceChart'), {
+        type: 'bar',
+        data: {
+            labels: processedLabels,
+            datasets: [
+                {
+                    label: 'Layers (sq. ft./bird)',
+                    data: [0.7, 2.0, 4.5], 
+                    backgroundColor: brandColors.brightBlue,
+                    borderColor: brandColors.brightBlue,
+                    borderWidth: 1
+                },
+                {
+                    label: 'Broilers (sq. ft./bird)',
+                    data: [1.0, null, 2.5],
+                    backgroundColor: brandColors.orange,
+                    borderColor: brandColors.orange,
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Square Feet per Bird'
+                    }
+                }
+            },
+            plugins: chartTooltipConfig.plugins
+        }
+    });
+});
+</script>
+</body>
+</html>
